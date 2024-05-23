@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float moveSpeed = 5f;
    
     private void Update()
     {
@@ -29,7 +27,6 @@ public class Player : MonoBehaviour
         
         input = input.normalized;
         Vector3 moveDir = new Vector3(input.x, 0, input.y);
-        transform.position += moveDir * Time.deltaTime;
-        Debug.Log(input);
+        transform.position += moveDir * moveSpeed * Time.deltaTime;
     }
 }
