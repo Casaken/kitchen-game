@@ -1,29 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameInput : MonoBehaviour
 {
+    private PlayerInputActions _playerInputActions;
+    private void Awake()
+    {
+        _playerInputActions = new PlayerInputActions();
+        _playerInputActions.Player.Enable();
+    }
+
     public Vector3 GetMovementVectorNormalized()
     {
-        Vector2 input = new Vector2(0, 0);
-        if(Input.GetKey(KeyCode.W))
-        {
-            input.y = +1;
-        }
-        if(Input.GetKey(KeyCode.S))
-        {
-            input.y = -1;
-        }
-        
-        if(Input.GetKey(KeyCode.A))
-        {
-            input.x = -1;
-        }
-        if(Input.GetKey(KeyCode.D))
-        {
-            input.x = +1;
-        }
+        Vector2 input = _playerInputActions.Player.Move.ReadValue<Vector2>();
         
         input = input.normalized;
         return input;
