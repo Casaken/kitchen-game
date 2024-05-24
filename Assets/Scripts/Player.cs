@@ -1,18 +1,45 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private GameInput _gameInput;
+    [SerializeField] private LayerMask countersLayerMask;
     private float playerRadius = 0.7f;
     private float playerHeight = 2f;
     private bool isWalking;
-    
-   
+    private Vector3 lastInteractDirection;
+
+
     private void Update()
+    {
+        HandleMovement();
+        HandleInteractions();
+    }
+
+    private void HandleInteractions()
+    {
+        Vector2 input = _gameInput.GetMovementVectorNormalized();     
+        Vector3 moveDir = new Vector3(input.x, 0, input.y);
+        if (moveDir != Vector3.zero)
+        {
+            lastInteractDirection = moveDir;
+        }
+        float interactionDistance = 2f;
+        if (Physics.Raycast(transform.position, lastInteractDirection, out RaycastHit hit, interactionDistance,countersLayerMask))
+        {
+            if(hit.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+                clearCounter.Interact();
+            }
+        }
+    }
+
+    private void HandleMovement()
     {
         Vector2 input = _gameInput.GetMovementVectorNormalized();     
         Vector3 moveDir = new Vector3(input.x, 0, input.y);
@@ -47,5 +74,5 @@ public class Player : MonoBehaviour
     }
 
     public bool IsWalking() => isWalking;
-
 }
+
