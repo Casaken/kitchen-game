@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5d84cbed8e1c84585f18962a2a0776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 7
   rotateSpeed: 10
   _gameInput: {fileID: 166196354}
 --- !u!1 &963194225
