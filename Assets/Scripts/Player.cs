@@ -1,10 +1,11 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
+    
+
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private GameInput _gameInput;
@@ -12,8 +13,24 @@ public class Player : MonoBehaviour
     private float playerRadius = 0.7f;
     private float playerHeight = 2f;
     private bool isWalking;
+    private ClearCounter selectedCounter;
     private Vector3 lastInteractDirection;
 
+    public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged ;
+
+    public class OnSelectedCounterChangedEventArgs : EventArgs
+    {
+        public ClearCounter selectedCounter;
+    }
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Debug.LogError("There is more than one Player instance");
+        }
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -22,19 +39,9 @@ public class Player : MonoBehaviour
 
     private void GameInput_OnInteractAction(object sender, EventArgs e)
     {
-        Vector2 input = _gameInput.GetMovementVectorNormalized();     
-        Vector3 moveDir = new Vector3(input.x, 0, input.y);
-        if (moveDir != Vector3.zero)
+        if (selectedCounter != null)
         {
-            lastInteractDirection = moveDir;
-        }
-        float interactionDistance = 2f;
-        if (Physics.Raycast(transform.position, lastInteractDirection, out RaycastHit hit, interactionDistance,countersLayerMask))
-        {
-            if(hit.transform.TryGetComponent(out ClearCounter clearCounter))
-            {
-                clearCounter.Interact();
-            }
+            selectedCounter.Interact();
         }
     }
 
@@ -58,10 +65,25 @@ public class Player : MonoBehaviour
         {
             if(hit.transform.TryGetComponent(out ClearCounter clearCounter))
             {
-                // Debug.Log("Clear counter");
-                // clearCounter.Interact();
+                //this clear counter is the output of raycast. I did not define it at the start. Thats how it calls the clearcounter function btw :().
+                //if the counter we are looking at is not the selected one then we select it for sure.
+                if (clearCounter != selectedCounter)
+                {
+                    SetSelectedCounter(clearCounter);
+
+                }
             }
+            else
+            {
+                //if it hits something that is not a clear counter then we set the selected one to null.
+                SetSelectedCounter(null); 
+                
+            }
+        }else
+        {
+            SetSelectedCounter(null);
         }
+
     }
 
     private void HandleMovement()
@@ -99,5 +121,14 @@ public class Player : MonoBehaviour
     }
 
     public bool IsWalking() => isWalking;
+
+    private void SetSelectedCounter(ClearCounter selectedCounter)
+    {
+        this.selectedCounter = selectedCounter;
+        OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
+        {
+            selectedCounter = selectedCounter
+        });
+    }
 }
 
