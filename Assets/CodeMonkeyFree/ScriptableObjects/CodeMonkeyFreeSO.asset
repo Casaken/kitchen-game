@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d777d270cee3a5c419cb21a828556f1a, type: 3}
+  m_Name: CodeMonkeyFreeSO
+  m_EditorClassIdentifier: 
+  currentVersion: 1.00
+  subtype: kitchenchaos
+  lastShownTimestamp: 1739632187
+  lastUpdateResponse:
+    version: 1.00
+    versionUrl: https://unitycodemonkey.com
+  checkedLastUpdateTimestamp: 1739632187
+  lastQOTDResponse:
+    questionId: 151
+    questionText: What will happen on January 19, 2038 at 03:14:07?
+    answerA: Armagedon
+    answerB: End of Unix Time
+    answerC: Half-Life 3 release date
+    answerD: 
+    answerE: 
+  lastQotdTimestamp: 1739632187
+  lastDynamicHeaderResponse:
+    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/syntySaleFeb25.png
+    topText: Get AWESOME Low Poly Assets 70% OFF! Every theme imaginable!
+    topLink: syntystore
+    bottomText: My 10+ Years of C# Knowledge in 1 Course!
+    bottomLink: csharpcourse
+  lastDynamicHeaderTimestamp: 1739632187
+  websiteLatestMessage:
+    text: <a href="https://cmonkey.co/tictactoenfefree">I just published my latest
+      FREE course! Click here!</a>
+  websiteLatestMessageTimestamp: 1739632187
+  websiteLatestVideos:
+    videos:
+    - youTubeId: 2H4ouL4bCUs
+      title: AI is creating illiterate programmers! (you?)
+    - youTubeId: n8xZ1zWLjaE
+      title: TOP 10 NEW Games, Made with Unity! (JANUARY 2025)
+    - youTubeId: trLMR5aH0eQ
+      title: How to turn DOTS Singleplayer into Multiplayer! (Netcode for Entities)
+    - youTubeId: DiXQJXz8FOM
+      title: TOP 10 C# things you MIGHT not know (I didn't!)
+  websiteLatestVideosTimestamp: 1739632187
