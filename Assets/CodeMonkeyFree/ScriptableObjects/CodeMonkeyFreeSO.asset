@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.00
   subtype: kitchenchaos
-  lastShownTimestamp: 1739632187
+  lastShownTimestamp: 1739780956
   lastUpdateResponse:
     version: 1.00
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1739632187
+  checkedLastUpdateTimestamp: 1739780956
   lastQOTDResponse:
     questionId: 151
     questionText: What will happen on January 19, 2038 at 03:14:07?
@@ -27,18 +27,19 @@ MonoBehaviour:
     answerC: Half-Life 3 release date
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1739632187
+  lastQotdTimestamp: 1739780956
   lastDynamicHeaderResponse:
-    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/syntySaleFeb25.png
-    topText: Get AWESOME Low Poly Assets 70% OFF! Every theme imaginable!
-    topLink: syntystore
+    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/unityBundleFeb25.png
+    topText: Unity 95% OFF on 3 BUNDLES! If just one asset looks interesting then
+      the whole bundle is worth it!
+    topLink: unityassetstore
     bottomText: My 10+ Years of C# Knowledge in 1 Course!
     bottomLink: csharpcourse
-  lastDynamicHeaderTimestamp: 1739632187
+  lastDynamicHeaderTimestamp: 1739780956
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/tictactoenfefree">I just published my latest
       FREE course! Click here!</a>
-  websiteLatestMessageTimestamp: 1739632187
+  websiteLatestMessageTimestamp: 1739780956
   websiteLatestVideos:
     videos:
     - youTubeId: 2H4ouL4bCUs
@@ -49,4 +50,4 @@ MonoBehaviour:
       title: How to turn DOTS Singleplayer into Multiplayer! (Netcode for Entities)
     - youTubeId: DiXQJXz8FOM
       title: TOP 10 C# things you MIGHT not know (I didn't!)
-  websiteLatestVideosTimestamp: 1739632187
+  websiteLatestVideosTimestamp: 1739780956
