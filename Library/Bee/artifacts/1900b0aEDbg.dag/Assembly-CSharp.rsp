@@ -358,6 +358,7 @@
 "Assets/_Assets/Scripts/PlayerAnimator.cs"
 "Assets/_Assets/Scripts/PlayerInput.cs"
 "Assets/_Assets/Scripts/PlayerMovement.cs"
+"Assets/_Assets/Scripts/SelectedCounterVisual.cs"
 -langversion:9.0
 
 /deterministic

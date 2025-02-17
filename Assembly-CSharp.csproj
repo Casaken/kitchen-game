@@ -47,6 +47,7 @@
     <Compile Include="Assets\_Assets\InputActions\PlayerInputActions.cs" />
     <Compile Include="Assets\_Assets\Scripts\Init.cs" />
     <Compile Include="Assets\_Assets\Scripts\ClearCounter.cs" />
+    <Compile Include="Assets\_Assets\Scripts\SelectedCounterVisual.cs" />
     <None Include="Assets\_Assets\KitchenChaos_COMPLETE_PROJECT.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.35f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
